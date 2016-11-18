@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/modernizr-2.6.2.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var meter1
+				window.onload=function(){
+					meter1=document.getElementById("meter1");
+					setInterval(add,100);
+				}
+				
+				function add(){
+					meter1.value+=1;
+					if(meter1.value>=100) meter1.value=0;
+				}
+		</script>
+	</head>
+
+	<body>
+		<p  hidden="hidden">
+			看不见我
+		</p>
+		<p>
+			姓名：<span contenteditable="true" style="width: 200px; border: 1px solid #ccc; display: inline-block;">Tom</span>
+		</p>
+		<input type="text" list="list1">
+		<datalist id="list1">
+			<option value="1">中国</option>
+			<option value="2">美国</option>
+			<option value="3">德国</option>
+		</datalist>
+		<progress></progress>
+		<meter id="meter1" max="100" min="0" value="50" style="width:100%"></meter>
+		<section>Hello</section>
+		<section>World!</section>
+		<figure>
+			<figcaption>一些照</figcaption>
+			<img src="img/jd_lqd.jpg" />
+		</figure>
+		<dialog>
+			<dt>老师：</dt>
+			<dd>1+1=？</dd>
+			<dt>学生：</dt>
+			<dd>3</dd>
+			<dt>老师：</dt>
+			<dd>不对，是等于2</dd>
+		</dialog>
+	</body>
+
+</html>

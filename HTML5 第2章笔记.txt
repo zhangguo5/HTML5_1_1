@@ -1,0 +1,65 @@
+1、省略号
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	
+2、如果想让不支持HTML5的浏览器兼容HTML5新标签，可以引用js
+http://www.modernizr.com/
+
+3、
+<dl>
+	<dt></dt>
+	<dd></dd>
+	<dt></dt>
+	<dd></dd>
+</dl>
+
+4、行内标签 meter
+meter。表示特定范围内的数值，可用于工资、数量、百分比等 max表示最大值，min表示最小值，value代表当前值。
+<meter id="meter1" max="100" min="0" value="50" style="width:100%"></meter>
+
+5、progress进度条
+
+6、<datalist> 标签定义选项列表
+<input type="text" datalist="list1">
+<datalist id="list1">
+	<option value="1">中国</option>
+	<option value="2">美国</option>
+	<option value="3">德国</option>
+</datalist>
+
+7、新增属性
+contentEditable
+规定是否可编辑元素的内容
+Document.body.contentEditable=true;修改已发布网站
+
+8、hidden属性用于隐藏该元素。
+		<p  hidden="hidden">
+			看不见我
+		</p>
+
+9、draggable="true" 规定元素是否可拖拽
+
+A.dragstart：当元素拖拽开始触发；
+B.drag：在元素拖拽过程中触发；
+C.dragend：元素拖拽结束时触发。
+
+10、data-*属性能让用户自定义属性的方式来存储数据
+<span data-order-amount=100></span>
+取值：
+getAttribute('data-order-amount')
+dataset.orderAmount
+jQuery中的data()方法同样可以访问
+
+//使用jQuery设置值
+$("#div1").data("name","电池");
+//取值
+alert($("#div1").data("name"));
+
+//使用js设置值
+div1.setAttribute("data-order-price",998.7);
+//取值
+alert(div1.getAttribute("data-order-price"));
+
+
+
