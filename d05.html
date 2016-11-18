@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>audio标签</title>
+	</head>
+	<body>
+		<h2>audio标签</h2>
+		<audio src="content/fcml.mp3" controls="controls" autoplay="autoplay" id="mp3">
+			<marquee><h2>换个浏览器吧，太老了</h2></marquee>
+		</audio>
+		<input type="range" min="0" max="100" onchange="setVolume(this)" />  
+		<script type="text/javascript">
+			function setVolume(obj){
+				document.getElementById("mp3").volume=obj.value*0.01;
+			}
+		</script>
+	</body>
+</html>
