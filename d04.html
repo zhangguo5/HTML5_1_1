@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>事件绑定与监听的区别</title>
+	</head>
+
+	<body>
+		<button id="btnA">按钮A</button>
+		<button id="btnB">按钮B</button>
+		<script type="text/javascript">
+			var btnA = document.getElementById("btnA");
+			var btnB = document.getElementById("btnB");
+			btnA.onclick = function() {
+				alert("你点了一下");
+			}
+			btnA.onclick = function() {
+				alert("你又点了一下");
+			}
+			
+			btnB.addEventListener("click",function(event){
+				alert("你点了一下");
+			},false);
+			
+			btnB.addEventListener("click",function(event){
+				alert("你又点了一下");
+			},false);
+		</script>
+	</body>
+
+</html>

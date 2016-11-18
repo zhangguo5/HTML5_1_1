@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML5新增的行内标签</title>
+	</head>
+
+	<body oncontextmenu="menu1">
+		<h2>HTML5新增的行内标签</h2>Hello
+		<h3>meter</h3>
+		<meter max="100" min="0" value="60" style="width: 300px;"></meter>进度
+		<h3>time</h3> 大会时间：
+		<time>2015-10-6</time> 我们在每天早上 <time>8:30</time> 开始上课。 我在<time datetime="2017-02-14">情人节</time>有个约会。
+		<h3>progress</h3>
+		<progress value="75" max="100"></progress>
+		<h3>datalist</h3>
+		<input type="text" list="countries" />
+		<datalist id="countries">
+			<option value="中国"></option>
+			<option value="美国"></option>
+			<option value="日本"></option>
+		</datalist>
+		<h3>menu</h3>
+		<menu id="menu1">
+			<li><input type="checkbox" />Red</li>
+			<li><input type="checkbox" />blue</li>
+			<li><input type="checkbox" />green</li>
+		</menu>
+	</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Video 标签</title>
+	</head>
+	<body>
+		<video id="videoIce" width="800" height="600" controls="controls" poster="content/1.jpg">
+			<source src="content/iceage4.mp4" type="video/mp4"></source>
+			<source src="content/iceage4.webm" type="video/webm"></source>
+			<object width="" height="" type="application/x-shockwave-flash" data="myvideo.swf">
+				<param name="movie" value="myvideo.swf" />
+				<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+			</object> 当前浏览器不支持 video直接播放，点击这里下载视频：
+			<a href="content/iceage4.webm">下载视频</a>
+		</video>
+		<h2>
+			<button onclick="play()">播放</button>
+			<button onclick="pause()">暂停</button>
+			<span id="msg"></span>
+		</h2>
+		<script type="text/javascript">
+		   var videoIce=document.getElementById("videoIce");
+			function play() {
+				videoIce.play();
+			}
+
+			function pause() {
+				videoIce.pause();
+			}
+			
+			videoIce.ontimeupdate = function() {
+				document.getElementById("msg").innerHTML=videoIce.currentTime;
+			}
+		</script>
+	</body>
+
+</html>
