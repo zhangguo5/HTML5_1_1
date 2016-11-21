@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button onclick="createDb()">创建/打开数据库</button>
+		<button onclick="createTable()">创建表</button>
+		<button onclick="insert()">添加数据</button>
+		<script>
+			var dataBase;
+
+			function createDb() {
+				dataBase = openDatabase("students", "1.0", "学生表", 1024 * 1024, function() {
+					alert("创建完成");
+				});
+			}
+			
+			function createTable()
+			{
+				dataBase.transaction(function(tx){
+					tx.executeSql("create table if not exists stus(id int primary key,name char(50))",
+					[],
+					function(){alert('成功回调');},
+					function(){alert('失败回调');}
+					)
+				});
+			}
+			
+			function insert(){
+				dataBase.transaction(function(tx){
+					tx.executeSql("insert into stus(id,name) values(?,?);",
+					[1,'张三'],
+					function(){alert('成功回调');},
+					function(){alert('失败回调');}
+					)
+				});
+			}
+			
+		</script>
+	</body>
+
+</html>
